@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Animated Pop-up</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    @keyframes rotateIn {
+      0% {
+        transform: rotate(-180deg) scale(0);
+        opacity: 0;
+      }
+      50% {
+        transform: rotate(0deg) scale(1.2);
+        opacity: 1;
+      }
+      100% {
+        transform: scale(1);
+      }
+    }
+
+    @keyframes fadeInScale {
+      0% {
+        transform: scale(0.8);
+        opacity: 0;
+      }
+      100% {
+        transform: scale(1);
+        opacity: 1;
+      }
+    }
+
+    .animate-check {
+      animation: rotateIn 0.8s ease-out forwards;
+    }
+
+    .animate-popup {
+      animation: fadeInScale 0.5s ease-out forwards;
+    }
+  </style>
+</head>
+<body class="flex items-center justify-center min-h-screen">
+  <button id="createAccountBtn" class="px-6 py-3 text-white bg-green-500 rounded-lg hover:bg-green-600">
+    Create Account
+  </button>
+
+  <div id="popup" class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 hidden">
+
+    <div class="bg-white rounded-lg shadow-lg w-96 p-6 text-center relative animate-popup">
+        <div class="absolute -top-8 left-1/2 transform -translate-x-1/2 bg-green-500 w-16 h-16 rounded-full flex items-center justify-center animate-check border-none">
+        <svg class="w-8 h-8 text-white items-center" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+        </svg>
+      </div>
+      <h2 class="text-xl font-semibold mt-8">Thank You!</h2>
+      <p class="text-gray-600 mt-2">Your details have been successfully submitted. Thanks!</p>
+
+      <button id="closePopupBtn" class="mt-6 px-4 py-2 bg-green-500 text-white rounded-lg hover:bg-green-600">
+        OK
+      </button>
+    </div>
+  </div>
+
+  <script>
+    const createAccountBtn = document.getElementById('createAccountBtn');
+    const popup = document.getElementById('popup');
+    const closePopupBtn = document.getElementById('closePopupBtn');
+
+    createAccountBtn.addEventListener('click', () => {
+      popup.classList.remove('hidden');
+    });
+
+    closePopupBtn.addEventListener('click', () => {
+      popup.classList.add('hidden');
+    });
+  </script>
+</body>
+</html>

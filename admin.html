@@ -1,0 +1,154 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Olympics News Page</title>
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    .navbar-custom { 
+      background-color: #000; color: #fff;
+    }
+    .navbar-custom .navbar-nav .nav-link, .navbar-custom .navbar-brand { 
+      color: #fff; 
+    }
+    .footer-custom {
+       background-color: #222; color: #fff; padding: 2rem;
+      }
+    .footer-custom a {
+       color: #aaa; 
+      }
+    .main-article, .latest-articles .card, .news-videos .card, .basketball-news .card { margin-bottom: 1rem; }
+    .section-title { font-weight: bold; margin-top: 2rem; font-size: 1.5rem; text-transform: uppercase; }
+    .action-buttons { display: flex; gap: 0.5rem; margin-top: 0.5rem; }
+  </style>
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-custom">
+  <div class="container">
+    <a class="navbar-brand" href="#">LET'S READ</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">Join Us</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">Customer Care</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">Reach Out</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">About Us</a></li>
+      </ul>
+      <button class="btn btn-warning ml-3">Subscribe</button>
+    </div>
+  </div>
+</nav>
+
+<div class="container mt-4">
+  <div class="main-article">
+    <p>By Dimas Brembo | Olympics | 6 minute read</p>
+    <h2>Women's Basketball Semifinals Preview And Schedule</h2>
+    <img src="assets/img5.jpg" alt="Main Article Image" class="mb-3" style="width: 100%; border-radius: 5px;">
+    <p>Preview text for the main article goes here...</p>
+    <div class="action-buttons">
+      <button class="btn btn-warning btn-sm" onclick="window.location.href='edit.php?id=1'">Edit</button>
+      <button class="btn btn-danger btn-sm" onclick="deleteArticle(1)">Delete</button>
+    </div>
+  </div>
+
+  <div class="section-title">Latest Articles</div>
+  <button class="btn btn-primary mb-3" onclick="window.location.href='create.php'">Add New Article</button>
+  <div class="row latest-articles">
+    <div class="col-md-3">
+      <div class="card">
+        <img src="assets/img2.jpg" class="card-img-top" alt="Article 2">
+        <div class="card-body">
+          <h6 class="card-title">Carlos Nassar wins 89kg gold and breaks World Record</h6>
+          <p>Olympics | 4 min read</p>
+          <div class="action-buttons">
+            <button class="btn btn-warning btn-sm" onclick="window.location.href='edit.php?id=2'">Edit</button>
+            <button class="btn btn-danger btn-sm" onclick="deleteArticle(2)">Delete</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-title">News in Video</div>
+  <button class="btn btn-primary mb-3" onclick="window.location.href='create.php'">Add New Video</button>
+  <div class="row news-videos">
+    <div class="col-md-6">
+      <div class="card">
+        <img src="assets/img3.jpg" class="card-img-top" alt="Video 1">
+        <div class="card-body">
+          <h6 class="card-title">3x3 Basketball Stars Shine: Champions Park Highlights in Video</h6>
+          <p>Olympics | 5 min watch</p>
+          <div class="action-buttons">
+            <button class="btn btn-warning btn-sm" onclick="window.location.href='edit.php?id=3'">Edit</button>
+            <button class="btn btn-danger btn-sm" onclick="deleteArticle(3)">Delete</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-title">Basketball News</div>
+  <button class="btn btn-primary mb-3" onclick="window.location.href='create.php'">Add Basketball News</button>
+  <div class="row basketball-news d-flex overflow-auto">
+    <div class="col-md-3">
+      <div class="card">
+        <img src="assets/img1.jpg" class="card-img-top" alt="Basketball News">
+        <div class="card-body">
+          <h6 class="card-title">How to watch USA v France live - full schedule</h6>
+          <p>Basketball | 3 min read</p>
+          <div class="action-buttons">
+            <button class="btn btn-warning btn-sm" onclick="window.location.href='edit.php?id=4'">Edit</button>
+            <button class="btn btn-danger btn-sm" onclick="deleteArticle(4)">Delete</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer class="footer-custom">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-3">
+        <h5>Home</h5>
+        <ul class="list-unstyled">
+          <li><a href="#">U.S.</a></li>
+          <li><a href="#">Politics</a></li>
+          <li><a href="#">World</a></li>
+        </ul>
+      </div>
+      <div class="col-md-3">
+        <h5>Entertainment</h5>
+        <ul class="list-unstyled">
+          <li><a href="#">Ideas</a></li>
+          <li><a href="#">Science</a></li>
+          <li><a href="#">History</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="text-center mt-4">
+      <p>Subscribe to Newsletter</p>
+      <form class="form-inline justify-content-center">
+        <input type="email" class="form-control mr-2" placeholder="Email address">
+        <button class="btn btn-warning">Subscribe</button>
+      </form>
+    </div>
+  </div>
+</footer>
+
+<script>
+  function deleteArticle(id) {
+    if (confirm("Are you sure you want to delete this article?")) {
+      window.location.href = `delete.php?id=${id}`;
+    }
+  }
+</script>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html> -->
